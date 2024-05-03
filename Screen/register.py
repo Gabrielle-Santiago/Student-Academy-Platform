@@ -1,5 +1,5 @@
 from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager
 from kivy.core.window import Window
 from kivy.utils import get_color_from_hex
 from kivy.graphics import Rectangle, Line
@@ -10,6 +10,9 @@ from kivy.uix.label import Label
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
+# from Screen.login import LoginScreen
+# from Screen.password import ForgotPasswordScreen
+# from Screen.home import HomeScreen
 import sqlite3
 
 class RegisterScreen(Screen):
@@ -59,7 +62,7 @@ class RegisterScreen(Screen):
 
         # Adicionar imagem de fundo
         with layout.canvas.before:
-            self.background = Rectangle(source='IMG/Cadastro.png', pos=layout.pos, size=layout.size)
+            self.background = Rectangle(source='Resources/IMG/Cadastro.png', pos=layout.pos, size=layout.size)
 
         text_color = (1, 1, 1, 1)  # Cor do texto
 

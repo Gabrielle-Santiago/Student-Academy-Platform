@@ -8,7 +8,7 @@ from kivy.graphics import Rectangle, Line
 from kivy.uix.boxlayout import BoxLayout
 from kivy.utils import get_color_from_hex
 from kivy.app import App
-from Screen.cadastro import RegisterScreen
+#from Screen.cadastro import RegisterScreen
 import sqlite3
 
 text_color = get_color_from_hex("#FFFFFF")
@@ -21,7 +21,7 @@ class LoginScreen(Screen):
 
         # Adicionar imagem de fundo
         with layout.canvas.before:
-            self.background = Rectangle(source='IMG/TelaLogin.jpg', pos=layout.pos, size=layout.size)
+            self.background = Rectangle(source='Resources/IMG/TelaLogin.jpg', pos=layout.pos, size=layout.size)
 
         text_color = (1, 1, 1, 1)  # Cor do texto
 
@@ -49,7 +49,7 @@ class LoginScreen(Screen):
         layout.add_widget(forgot_password_button)
         layout.add_widget(login_button)
         self.add_widget(layout)
-        layout.add_widget(Label(text="Student Academy Platform", font_size=36, color=(1, 1, 1, 1), font_name='IMG/BebasNeue-Regular.otf', pos_hint={'center_x': 0.5, 'y': 0.3}))
+        layout.add_widget(Label(text="Student Academy Platform", font_size=36, color=(1, 1, 1, 1), font_name='Resources/Font/BebasNeue-Regular.otf', pos_hint={'center_x': 0.5, 'y': 0.3}))
 
     def update_line(self, instance, value):
         instance.canvas.after.clear()
@@ -130,7 +130,7 @@ class MyApp(App):
     def build(self):
         sm = ScreenManager()
         sm.add_widget(LoginScreen(name='login'))
-        sm.add_widget(RegisterScreen(name='register'))
+        #sm.add_widget(RegisterScreen(name='register'))
         # sm.add_widget(ForgotPasswordScreen(name='forgot_password'))
         # sm.add_widget(HomeScreen(name='home')) 
         return sm
