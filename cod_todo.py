@@ -102,7 +102,7 @@ class RegisterScreen(Screen):
 
         # Adicionar imagem de fundo
         with layout.canvas.before:
-            self.background = Rectangle(source='Cadastro.png', pos=layout.pos, size=layout.size)
+            self.background = Rectangle(source='IMG/Cadastro.png', pos=layout.pos, size=layout.size)
 
         text_color = (1, 1, 1, 1)  # Cor do texto
 
@@ -188,7 +188,7 @@ class LoginScreen(Screen):
 
         # Adicionar imagem de fundo
         with layout.canvas.before:
-            self.background = Rectangle(source='TelaLogin.jpg', pos=layout.pos, size=layout.size)
+            self.background = Rectangle(source='IMG/TelaLogin.jpg', pos=layout.pos, size=layout.size)
 
         text_color = (1, 1, 1, 1)  # Cor do texto
 
@@ -226,7 +226,7 @@ class LoginScreen(Screen):
         layout.add_widget(forgot_password_button)
         layout.add_widget(login_button)
         self.add_widget(layout)
-        layout.add_widget(Label(text="Student Academy Platform", font_size=36, color=(1, 1, 1, 1), font_name='BebasNeue-Regular.otf', pos_hint={'center_x': 0.5, 'y': 0.3}))
+        layout.add_widget(Label(text="Student Academy Platform", font_size=36, color=(1, 1, 1, 1), font_name='IMG/BebasNeue-Regular.otf', pos_hint={'center_x': 0.5, 'y': 0.3}))
 
 
     def update_line(self, instance, value):

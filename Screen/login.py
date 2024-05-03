@@ -64,7 +64,7 @@ class LoginScreen(Screen):
             return
 
         # Conectar ao banco de dados SQLite
-        conn = sqlite3.connect('users.db')
+        conn = sqlite3.connect('BD/users.db')
         cursor = conn.cursor()
 
         # Verificar se o usuário existe no banco de dados

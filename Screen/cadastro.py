@@ -26,7 +26,7 @@ class RegisterScreen(Screen):
             return
 
         # Conectar ao banco de dados SQLite
-        conn = sqlite3.connect('users.db')
+        conn = sqlite3.connect('BD/users.db')
         cursor = conn.cursor()
 
         # Verificar se o email já está cadastrado
@@ -34,6 +34,7 @@ class RegisterScreen(Screen):
         if cursor.fetchone():
             self.show_popup("Erro", "Este e-mail já está registrado.")
             conn.close()
+            cursor.close()
             return
 
         # Inserir os detalhes do usuário no banco de dados
@@ -43,6 +44,7 @@ class RegisterScreen(Screen):
 
         # Fechar a conexão com o banco de dados
         conn.close()
+        cursor.close()
 
         # Após o registro, retornar à tela de login
         self.parent.current = 'login'
