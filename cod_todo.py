@@ -9,8 +9,7 @@ from kivy.core.window import Window
 from kivy.utils import get_color_from_hex
 from kivy.graphics import Rectangle, Line
 from kivy.uix.spinner import Spinner
-from kivy.uix.tabbedpanel import TabbedPanelHeader
-from kivy.uix.tabbedpanel import TabbedPanel
+from kivy.uix.tabbedpanel import TabbedPanelHeader, TabbedPanel
 from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Rectangle
 from kivy.uix.screenmanager import Screen
@@ -23,7 +22,6 @@ from kivy.uix.popup import Popup
 from kivy.uix.spinner import SpinnerOption
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
 import sqlite3
 
