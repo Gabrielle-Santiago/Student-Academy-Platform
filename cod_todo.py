@@ -27,6 +27,22 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
 import sqlite3
 
+# Conectar ao banco de dados SQLite
+conn = sqlite3.connect('users.db')
+cursor = conn.cursor()
+
+# Criar a tabela 'users' se ela não existir
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY,
+                    name TEXT,
+                    last_name TEXT,
+                    email TEXT,
+                    password TEXT
+                  )''')
+
+# Commit e fechar a conexão
+conn.commit()
+conn.close()
 
 # Definindo cores
 primary_color = get_color_from_hex("#4CAF50")  # verde
@@ -51,7 +67,7 @@ class RegisterScreen(Screen):
             return
 
         # Conectar ao banco de dados SQLite
-        conn = sqlite3.connect('BD/users.db')
+        conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
 
         # Verificar se o email já está cadastrado
@@ -74,6 +90,10 @@ class RegisterScreen(Screen):
 
     def go_back_to_login(self, instance):
         self.parent.current = 'login'
+
+    def show_popup(self, title, content):
+        popup = Popup(title=title, content=Label(text=content), size_hint=(None, None), size=(400, 200))
+        popup.open()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -231,7 +251,8 @@ class LoginScreen(Screen):
         conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
 
-        # Verificar se o usuário existe no banco de dados        cursor.execute("SELECT * FROM users WHERE email=? AND password=?", (email, password))
+        # Verificar se o usuário existe no banco de dados
+        cursor.execute("SELECT * FROM users WHERE email=? AND password=?", (email, password))
         user = cursor.fetchone()
 
         # Fechar a conexão com o banco de dados
