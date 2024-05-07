@@ -1,0 +1,1 @@
+# Informações sobre a construção da aplicação
