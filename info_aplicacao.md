@@ -1,7 +1,7 @@
 # Informações sobre a construção da aplicação
 
 ## Conceito Geral
-<p> O Student Academy Plataform é uma plataforma que oferece cursos, tutoriais e mentorias em diversas habilidades digitais, como programação, design gráfico, marketing digital e análise de dados, visando capacitar indivíduos para o mercado de trabalho digital. Para saber mais sobre o intuito da aplicação clique aqui (https://github.com/Gabrielle-Santiago/Student-Academy-Platform/blob/0c065f38d254d1c8ee412c60f8d25d72fbcb5f94/README.md). </p>
+<p> O Student Academy Plataform é uma plataforma que oferece cursos, tutoriais e mentorias em diversas habilidades digitais, como programação, design gráfico, marketing digital e análise de dados, visando capacitar indivíduos para o mercado de trabalho digital. Para saber mais sobre o intuito da aplicação clique aqui (https://shre.ink/Introducao-Student-Academy-Plataform). </p>
 
 ## Tecnologias Utilizadas
 ### Linguagens de Programação:
@@ -40,27 +40,28 @@
 * Descrição: Este diagrama representa a estrutura estática do sistema, mostrando as classes, seus atributos, métodos e relacionamentos.
 Elementos Chave:
 #### Usuário 
-* O usuário inicia na tela de login, na qual deve ser fornecido suas credenciais, à mesma tem uma conexão obrigatória (<<include>>) com o método cadastrado.
+* O usuário inicia na tela de login, na qual deve ser fornecido suas credenciais, à mesma tem uma conexão obrigatória (include) com o método cadastrado.
 * A classe Cadastro registra os dados principais do usuário e lança no banco de dados (Associação ->).
-* A classe Esqueci Senha, envia um código de recuperação (<<include>>), e aguarda a confirmação do mesmo, após permite que o usuário refaça sua senha (Associação ->).
+* A classe Esqueci Senha, envia um código de recuperação (include), e aguarda a confirmação do mesmo, após permite que o usuário refaça sua senha (Associação ->).
 * Após o envio das credenciais na área de login o usuário está logado na aplicação.
 
 #### Usuário Logado
-* A classe Perfil está vinculada à atualização de dados (Associação ), e a exclusão caso o mesmo exista (<<extend>>).
+* A classe Perfil está vinculada à atualização de dados (Associação ->), e a exclusão caso o mesmo exista (extend).
 * A classe Cursos foca na visualização clara e direta dos cursos disponibilizados, a qual possui a classe Atividades vinculada (Composição) que necessita diretamente da classe Cursos para existir, e a classe Atividade Finalizadas depende do termino de uma atividade (Dependência -->).
 * A classe Navegação tem por finalidade explorar as funcionalidades da aplicação.
-* A classe Matricular no Curso tem conexão com a classe Navegação (Associação ->) que tem intuito de matricular o usuário no curso desejado. E a classe Confirmação do Usuário tem vínculo com a classe Matricular no curso (), com finalidade de garantir que o usuário compreenda as responsabilidades subsequentes. 
+* A classe Matricular no Curso tem conexão com a classe Navegação (Associação ->) que tem intuito de matricular o usuário no curso desejado. E a classe Confirmação do Usuário tem vínculo com a classe Matricular no curso (Associação ->), com finalidade de garantir que o usuário compreenda as responsabilidades subsequentes. 
 * E a classe Acessar Curso (Dependência -->), encaminha o usuário para a página referente ao curso.
 * A classe Comunidade tem por intuito disponibilizar uma área para os usuários interagirem entre si, à mesma possui conexão com as classes Visualizar Conversas Anteriores e Responder Interações (Associação ->).
-* A classe Trilhas possui o objetivo de auxiliar o usuário a selecionar o melhor método para estudar, diante disso, a classe Escolher um Nível está associada à mesma (Associação ). 
+* A classe Trilhas possui o objetivo de auxiliar o usuário a selecionar o melhor método para estudar, diante disso, a classe Escolher um Nível está associada à mesma (Associação ->). 
 * E a classe Cursos e Atividade tem função de após escolhido o nível mostrar o resultado correspondente (Dependência -->).
-* A classe Artigo dispõe duas opções a primeira é o usuário escolher um curso e o mesmo será encaminhado para os artigos referentes por meio da classe Escolher Curso (Associação ) e Encaminhar Artigos (Associação ->).
+* A classe Artigo dispõe duas opções a primeira é o usuário escolher um curso e o mesmo será encaminhado para os artigos referentes por meio da classe Escolher Curso (Associação ->) e Encaminhar Artigos (Associação ->).
 * E a segunda é o usuário visualizar os artigos sem um curso referente, por meio da classe Visualizar Artigos Aleatórios (Associação ->)
 * A classe Perguntas Frequentes envia para a classe de Aba de perguntas frequentes (Associação ->), a qual possui duas alternativas
 * A primeira alternativa é uma conexão da classe Perguntar para comunidade à classe regente (Agregação), onde será redirecionado para a comunidade.
-* A segunda alternativa é a classe Contato com Suporte que está conectada com a classe regente de forma obrigatória para continuar (<<include>>), em seguida o usuário terá um retorno por meio da classe Retorna da Pergunta (Dependência -->).
+* A segunda alternativa é a classe Contato com Suporte que está conectada com a classe regente de forma obrigatória para continuar (include), em seguida o usuário terá um retorno por meio da classe Retorna da Pergunta (Dependência -->).
 
-![aplicacao](C:\Users\User\OneDrive\Área de Trabalho\Projeto Estácio\Documentacao\Modelagem UML\Student Academy Platform.jpg)
+![Modelo de Caso de Uso Student Academy Platform](https://github.com/Gabrielle-Santiago/Student-Academy-Platform/assets/142949700/f3117d63-912f-4227-bbb3-5edba61c293d)
+
 
 Exemplo Prático:
 <p> O usuário realiza o cadastro, fornecendo todas as informações necessárias, e após confirmação que seu cadastro foi registrado no banco de dados, o mesmo, retorna para a área de login e informa suas respectivas credenciais. </p>
