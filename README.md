@@ -27,7 +27,8 @@ A demanda por plataformas móveis e acessíveis para estudos está em alta, espe
 
 # Saiba Mais
 <p>
-Informações sobre a construção da aplicação: (https://exemplo.com/)
-Passo a passo sobre a aplicação: (https://exemplo.com/)
-Créditos e licenças de seguranças utilizadas: (https://exemplo.com/)
+Informações sobre a construção da aplicação: (https://shre.ink/Construcao-Aplicacao-Student-Academy-Plataform).
+</p>
+<p>
+Créditos e licenças de seguranças utilizadas: (https://shre.ink/Licenca-MIT)
 </p>
