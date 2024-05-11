@@ -10,13 +10,12 @@ from kivy.uix.label import Label
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
-# from Screen.login import LoginScreen
-# from Screen.password import ForgotPasswordScreen
-# from Screen.home import HomeScreen
+#from login import LoginScreen
+from password import ForgotPasswordScreen
+from home import HomeScreen
 import sqlite3
 
 class RegisterScreen(Screen):
-
     def register_user(self, instance):
         # Verificar se todos os campos estão preenchidos
         if not all(field.text.strip() for field in [self.name_input, self.last_name_input, self.email_input, self.password_input, self.repeat_password_input]):
@@ -135,10 +134,10 @@ class RegisterScreen(Screen):
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
-        # sm.add_widget(LoginScreen(name='login'))
+        #sm.add_widget(LoginScreen(name='login'))
         sm.add_widget(RegisterScreen(name='register'))
-        # sm.add_widget(ForgotPasswordScreen(name='forgot_password'))
-        # sm.add_widget(HomeScreen(name='home')) 
+        sm.add_widget(ForgotPasswordScreen(name='forgot_password'))
+        sm.add_widget(HomeScreen(name='home')) 
         return sm
     
 if __name__ == "__main__":
